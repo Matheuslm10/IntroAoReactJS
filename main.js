@@ -1,11 +1,10 @@
 const NomeContext = React.createContext('nome')
 
 function MeuComponente1() {
-    const meuNome = 'Matheus Machado'
     return (
         <div className="componente-1">
             <MeuComponente2>
-                <MeuComponente4 nome={meuNome} />
+                <MeuComponente3 />
             </MeuComponente2>
         </div>
     )
@@ -21,17 +20,29 @@ function MeuComponente2(props) {
 }
 
 function MeuComponente3() {
+    const [ telefone, setTelefone ] = React.useState('67 999998888')
+
+    setTimeout(function() {
+        setTelefone('11 888887777')
+    }, 2000)
+
     return (
         <div className="componente-3">
-            <MeuComponente4 />
+            <MeuComponente4 telefone={telefone}/>
         </div>
     )
 }
 
 function MeuComponente4(props) {
+    const [ idade, setIdade ] = React.useState(28)
+
+    setTimeout(function() {
+        setIdade(29)
+    }, 3000)
+
     return (
         <div className="componente-4">
-            <p>Componente 4 {props.nome}</p>
+            <p>Componente 4 - {idade} | {props.telefone}</p>
         </div>
     )
 }
