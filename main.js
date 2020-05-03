@@ -3,49 +3,51 @@ const NomeContext = React.createContext('nome')
 function MeuComponente1() {
     const meuNome = 'Matheus Machado'
     return (
-        React.createElement(NomeContext.Provider, { value: meuNome },
-            React.createElement('div', { className: 'componente-1' },
-                React.createElement(MeuComponente2)
-            )
-        )
+        <NomeContext.Provider value={meuNome}>
+            <div className="componente-1">
+                <MeuComponente2 />
+            </div>
+        </NomeContext.Provider>
     )
 }
 
 function MeuComponente2() {
     return (
-        React.createElement('div', { className: 'componente-2' },
-            React.createElement(MeuComponente3)
-        )
-    )
+        <div className="componente-2">
+            <MeuComponente3 />
+        </div>
+    )    
 }
 
 function MeuComponente3() {
     return (
-        React.createElement('div', { className: 'componente-3' },
-            React.createElement(MeuComponente4)
-        )
+        <div className="componente-3">
+            <MeuComponente4 />
+        </div>
     )
 }
 
 function MeuComponente4() {
     return (
-        React.createElement(NomeContext.Consumer, null,
-            (nomeContext) => (
-                React.createElement('div', { className: 'componente-4' },
-                    React.createElement('p', null, nomeContext)
-                )
-            )
-        )
+        <NomeContext.Consumer>
+            {(nomeContext) => (
+                <div className="componente-4">
+                    <p>{nomeContext}</p>
+                </div>
+            )}            
+        </NomeContext.Consumer>
     )
 }
 
 function MeuComponente() {
-    return React.createElement('div', { className: 'componentes' },
-        React.createElement(MeuComponente1)
+    return (
+        <div id="componentes">
+            <MeuComponente1 />
+        </div>
     )
 }
 
 ReactDOM.render(
-    React.createElement(MeuComponente),
+    <MeuComponente />,
     document.getElementById('app')
 )
