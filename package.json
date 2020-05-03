@@ -1,0 +1,24 @@
+{
+  "name": "introaoreact",
+  "version": "1.0.0",
+  "description": "Introducao ao ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matheuslm10/IntroAoReactJS.git"
+  },
+  "author": "Matheus Machado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matheuslm10/IntroAoReactJS/issues"
+  },
+  "homepage": "https://github.com/Matheuslm10/IntroAoReactJS#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-react": "^7.9.4"
+  }
+}
